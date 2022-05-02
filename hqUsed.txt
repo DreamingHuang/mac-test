@@ -1,0 +1,276 @@
+client_id: "310104198804104412",
+      password: "das123456",
+      userid: "das"
+31010101051320014045
+31010101051320014048
+336841
+
+平陆路
+
+
+撤警 青浦 重固镇重联村147号门口
+
+
+
+ let offcenter = [parseFloat(data.longitude), parseFloat(data.latitude)];
+ this.currMap.map.Transform.transformGeomtry(point, 'EPSG:4326', 'EPSG:3857');
+const point = DSCoordinateUtils.transformCoordinates(offcenter, 'EPSG:4326', 'EPSG:3857');
+
+
+http://market.kjc.ga.sh/itsp/#/front/apiMarket/list
+
+
+衡山路922号29栋D座
+// 路由跳转=====================================================
+import { Router, NavigationEnd } from "@angular/router";
+this.router.navigate([url], {
+            queryParams: {
+                
+            }
+        });
+
+private activatedRoute: ActivatedRoute
+this.activatedRoute.queryParams.subscribe(queryParams => {
+      
+});
+
+this.events = this.router.events.subscribe((event) => {
+            if (event instanceof NavigationEnd) {
+                if (event.url !== '/') {
+                    this.localUrl = event.url;
+                }
+            }
+        });
+// ==============================================================
+
+
+<a  *ngFor="let menu of menuList; index as i" routerLink="{{menu.url}}" routerLinkActive="routeActive">
+{{menu.name | translate}}
+</a>
+
+
+
+  {
+    "id": "siteEnforcementRecorder",
+    "type": "image",
+    "name": "4G执法记录仪",
+    "state": "defaultWMS",
+    "layerName": "gis:v_police_gcj02_siteEnforcementRecorder",
+    "layerUrl": "/ds-gis-resource/geoserver/gis/wms",
+    "projection": "EPSG:4326",
+    "version": "1.1.0",
+    "params": {
+      "LAYERS": "gis:v_police_gcj02_siteEnforcementRecorder",
+      "TILED": true
+    }
+  },
+
+  {
+    "id": "policeCar",
+    "type": "image",
+    "name": "警车",
+    "state": "defaultWMS",
+    "layerName": "gis:v_police_gcj02_car",
+    "layerUrl": "/ds-gis-resource/geoserver/gis/wms",
+    "projection": "EPSG:4326",
+    "version": "1.1.0",
+    "params": {
+      "LAYERS": "gis:v_police_gcj02_car",
+      "TILED": true
+    }
+  },
+
+
+202008121719543658402262 // 中台模拟数据
+202007141645015962303674 // 福州路556号
+
+
+
+
+/**
+ * iframe
+ */
+
+html
+
+<iframe [src]="trustedUrl" frameborder="0" id="iframe-content" cdkDrag cdkDragRootElement=".ant-modal-content"></iframe>
+
+ts
+
+
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+@Component({
+    selector: 'app-iframe-content',
+    templateUrl: 'iframe-content.component.html',
+    styleUrls: ['./iframe-content.component.scss']
+})
+export class IframeContentComponent implements OnInit {
+    trustedUrl: SafeResourceUrl;
+    @Input()
+    set safeUrl(url) {
+        this.setUrl(url);
+    }
+    constructor(
+        private sanitizer: DomSanitizer
+    ) {
+
+    }
+
+    ngOnInit() {
+    }
+
+    setUrl(url) {
+        this.trustedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    }
+
+}
+/**
+ * window.open
+ */
+window.open(this.URL, '日志文档','width=2000,height=1000,top=0,left=0,toolbar=no,menubar=no,scrollbars=no,location=no,status=no');
+
+
+/**
+ * 关闭浏览器当前tab页
+ */
+ window.location.href = "about:blank";
+ window.close();
+
+
+
+
+
+/**
+ *  angular8  路由
+ */
+
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { CocPreloadComponent } from 'projects/ds-coc-sh/src/lib/modules/preload/page/preload.page';
+const appRoutes: Routes = [
+  {
+    path: '',
+    component: CocPreloadComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'coc-start',
+        pathMatch: 'full'
+      },
+      {
+        path: 'coc-start',
+        loadChildren: () => import('../map-screen/map-screen.module').then(module => module.MapScreenModule),
+      },
+      {
+        path: 'casehistory',
+        loadChildren: () => import('../casehistory/casehistory.module').then(m => m.CaseHistoryModule),
+      },
+      {
+        path: 'statistcs',
+        loadChildren: () => import('../statistcs/statistcs.module').then(m => m.StatistcsModule),
+      },
+      {
+        path: 'notices',
+        loadChildren: () => import('../notices/notices.module').then(m => m.NoticesModule),
+	data: {
+          systemCode: SystemCode.COC
+        }
+      },
+      {
+        path: 'tools',
+        loadChildren: () => import('../tool/tool.module').then(m => m.ToolModule),
+      }
+    ]
+  },
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forChild(
+      appRoutes
+    )
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class PreloadRoutingModule {
+  constructor() {
+    console.log('PreloadRoutingModule construct');
+  }
+}
+路由传过来的data可以通过下面方式获取
+const daa = this.activatedRoute.snapshot.data
+
+this.activatedRoute.data.subscribe(res=>{
+   console.log(res);
+            
+})
+
+
+
+
+
+
+/**
+ *  动态组件
+ */
+import { Type } from '@angular/core';
+
+comp-item.ts
+/**
+ * 组件对象
+ */
+export class CompItem {
+
+  /**
+   *
+   * @param component 组件对象
+   * @param data 组件对象附加资源
+   * @param treatment 处理方式，默认为不处理（0），可选值为覆盖（1）,关闭（2）
+   * @param classobj 组件所需样式
+   * @param listFlag 列表标志位
+   * @param listInfo 可选数据
+   */
+  constructor(public component: Type<any>, public data: any, public treatment: number = 0, public classobj?: string, public listFlag?: boolean, public listInfo?:any) {
+  }
+}
+
+
+
+服务
+import { Injectable, ComponentRef, ComponentFactoryResolver, ViewContainerRef } from "@angular/core";
+import { CompItem } from "../../../coc/common/dynamic-component/comp-item";
+componentRef: ComponentRef<any>;
+    constructor(
+        private resolver: ComponentFactoryResolver,
+    ) {
+
+    }
+dynaminCreationComponents(container: ViewContainerRef, component, resolver?) {
+        const resolverCon = resolver ? resolver : this.resolver;
+        container.clear();
+        const dynaminComponent = new CompItem(component, null);
+        const factory = resolverCon.resolveComponentFactory(dynaminComponent.component);
+        this.componentRef = container.createComponent(factory);
+        return this.componentRef;
+    }
+
+组件ts创建动态组件
+html 
+<ng-template #container></ng-template>
+import { Component, OnInit, OnDestroy, ViewChild, ViewContainerRef } from '@angular/core';
+@ViewChild('container', { read: ViewContainerRef, static: false }) container: ViewContainerRef;
+
+
+ const componentRef = this.shareCommonService.dynaminCreationComponents(this.container, VideoPlayPageComponent);
+        if (list.length >= 4) {
+            componentRef.instance.videoList = list.slice(0, 4);
+        } else {
+            componentRef.instance.videoList = list;
+        }
+
+
+
+@ContentChild('tip', { read: TemplateRef, static: false }) tip:TemplateRef<any>
